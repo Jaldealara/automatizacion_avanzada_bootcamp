@@ -1,6 +1,7 @@
 package bctsoft.g6.pageobject.pages;
 
 import bctsoft.g6.pageobject.base.SeleniumBase;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -195,6 +196,7 @@ public class JetSmartHomePage extends SeleniumBase {
         catch(Exception ignored){}
 
         String result = findElement(mensajeError).getText();
+        Assert.assertEquals("Si necesitas hacer una reserva de 10 pasajeros o más, ingresa a nuestro formulario de grupos.",result);
         return result;
     }
     public void clickSoloIdaVuelos(){
@@ -307,6 +309,7 @@ public class JetSmartHomePage extends SeleniumBase {
 //aqui puede ir una espera de invisibilidad
 
         type(destino, destinoTraslados);
+        espera(500);
         isDisplayed(listadestinoTraslados);
         espera(500);
         click(listadestinoTraslados);
@@ -348,7 +351,6 @@ public class JetSmartHomePage extends SeleniumBase {
         sendKeysAbajo(pasajerosTraslado);
         sendKeysEnter(pasajerosTraslado);
     }
-
     public void botonBuscarTraslados(){
         click(botonEntrarTraslado);
     }

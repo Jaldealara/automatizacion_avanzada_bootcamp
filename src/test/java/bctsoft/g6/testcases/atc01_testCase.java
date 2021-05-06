@@ -17,8 +17,8 @@ public class atc01_testCase extends TestBase {
         jsHomePage = new JetSmartHomePage(driver);
         jsHomePage.goToUrl("https://jetsmart.com/cl/es/");
         jsHomePage.cerrarModuloSuscribete();
-        jsHomePage.cantidadPasajeros();
-
+        String result=jsHomePage.cantidadPasajeros();
+        System.out.println(result);
     }
     @Test
     public void ATC02_busquedaVueloFechaAnioSiguiente()throws InterruptedException{
@@ -96,9 +96,10 @@ public class atc01_testCase extends TestBase {
         jsHomePage.seleccionarNroNinos("1");
         jsHomePage.btnBusquedaHotel();
         jsHotelesPage.switchToPestana(0,1);
-        int longitud = jsHotelesPage.seleccionFiltroMayorPrecio();
+        String datosInt = jsHotelesPage.seleccionFiltroMayorPrecio();
         jsHotelesPage.modificacionBusqueda();
-        jsHotelesPage.validacionDeBusqueda(longitud,"Arica");
+        String result=jsHotelesPage.validacionDeBusqueda(datosInt,"Arica");
+        System.out.println(result);
     }
     @Test
     public void ATC_06flujoCompletoDeReserva() throws InterruptedException {

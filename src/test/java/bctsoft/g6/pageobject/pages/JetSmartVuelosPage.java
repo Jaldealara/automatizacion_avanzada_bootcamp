@@ -4,7 +4,7 @@ import bctsoft.g6.pageobject.base.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import bctsoft.g6.pageobject.base.SeleniumBase;
-import org.testng.Assert;
+import org.junit.Assert;
 
 public class JetSmartVuelosPage extends SeleniumBase {
 
