@@ -1,6 +1,7 @@
 package bctsoft.g6.pageobject.pages;
 
 import bctsoft.g6.pageobject.base.SeleniumBase;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import bctsoft.g6.pageobject.base.SeleniumBase;
@@ -34,6 +35,7 @@ public class JetSmartTrasladosPage extends SeleniumBase {
         if (paginaResultado.equals("Opciones de traslado disponibles para este viaje")) {
             resultado = "Busqueda de traslado exitosa";
         }
+        Assert.assertEquals("Busqueda de traslado exitosa",resultado);
         return resultado;
     }
 
@@ -59,7 +61,9 @@ public class JetSmartTrasladosPage extends SeleniumBase {
         String precio = getText(monedaPTraslado);
         if (precio.contains("USD")) {
             result = "Cambio de moneda exitosa";
+
         }
+        Assert.assertEquals("Cambio de moneda exitosa",result);
         return result;
     }
 
@@ -91,6 +95,7 @@ public class JetSmartTrasladosPage extends SeleniumBase {
         if (mensajeError.equals("Introduce una entrada válida. p. ej. AB123, CD1234")) {
             resultado = mensajeError;
         }
+        Assert.assertEquals("Introduce una entrada válida. p. ej. AB123, CD1234",resultado);
         return resultado;
     }
 }

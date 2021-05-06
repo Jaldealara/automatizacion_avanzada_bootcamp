@@ -30,13 +30,21 @@ public class JetSmartHotelesPage extends SeleniumBase {
         switchToPestana(0,1);
     }
 
-    public int seleccionFiltroMayorPrecio() throws InterruptedException {
+    public String  seleccionFiltroMayorPrecio() throws InterruptedException {
        //WebElement ultimoValor = findElements(filtroMayorPrecio).get(findElements(filtroMayorPrecio).size()-1);
         click(filtroMayorPrecio);
         espera(3000);
         int longitud = getText(textoPrecioHotel).length();
-        System.out.println(getText(textoPrecioHotel));
-        return longitud;
+
+        String [] arrayTextoPrecio = getText(textoPrecioHotel).split(" ");
+        String valorTextoPrecio = arrayTextoPrecio[1];
+        String [] data= valorTextoPrecio.split("\\.");
+        String nroConcatenado= data[0]+data[1];
+
+        String datosInt= String.valueOf(longitud);
+        datosInt =datosInt+" "+nroConcatenado;
+
+        return datosInt;
     }
 
     public void seleccionarFiltroDesayuno() throws InterruptedException{
@@ -55,7 +63,7 @@ public class JetSmartHotelesPage extends SeleniumBase {
         String [] arrayTextoPrecio = getText(textoPrecioHotel).split(" ");
         String valorTextoPrecio = arrayTextoPrecio[1];
         String [] arrayTextoprecioP= valorTextoPrecio.split("\\.");
-        String valorPrecio= arrayTextoprecioP[0]+arrayTextoprecioP[1];//+arrayTextoprecioP[2];
+        String valorPrecio= arrayTextoprecioP[0]+arrayTextoprecioP[1]+arrayTextoprecioP[2];
         int PrecioHotel = Integer.parseInt(valorPrecio);
             try {
 
@@ -67,7 +75,7 @@ public class JetSmartHotelesPage extends SeleniumBase {
                 }
             }
             catch (NoSuchElementException e){
-                System.out.println("filtro aplicado incorrectamente ");
+                System.out.println("filtro desayuno aplicado incorrectamente");
             }
 
        Assert.assertNotEquals("Prueba de ambos filtros exitosa",resultado);
@@ -82,17 +90,23 @@ public class JetSmartHotelesPage extends SeleniumBase {
         sendKeysEnter(origenNuevaBusqueda);
     }
 
-    public String validacionDeBusqueda(int longitud, String busquedaNueva){
+    public String validacionDeBusqueda(String datosInt, String busquedaNueva){
         String resultado= "";
         int longitud2 = getText(textoPrecioHotel).length();
-        System.out.println(longitud2);
-        System.out.println(getText(textoPrecioHotel));
-        System.out.println(longitud);
-        if(longitud2 < longitud){
-            System.out.println("primer if");
-            if (!getText(tituloBusqueda).equals(busquedaNueva) ){
-                System.out.println("segundo if");
-                resultado = "modificacion parametros de busqueda exitosa";
+        String [] corte=datosInt.split(" ");
+        int longitud = Integer.parseInt(corte[0]);
+        int nroCNA = Integer.parseInt(corte[1]);
+
+        String [] arrayTextoPrecioNB = getText(textoPrecioHotel).split(" ");
+        String valorTextoPrecio = arrayTextoPrecioNB[1];
+        String [] dataNB= valorTextoPrecio.split("\\.");
+        String nroConcatenadoNB= dataNB[0]+dataNB[1];
+        int nroCNB= Integer.parseInt(nroConcatenadoNB);
+        if(longitud2 == longitud){
+            if(nroCNB<nroCNA) {
+                if (!getText(tituloBusqueda).equals(busquedaNueva)) {
+                    resultado = "modificacion parametros de busqueda exitosa";
+                }
             }
         }
         Assert.assertEquals("modificacion parametros de busqueda exitosa",resultado);
