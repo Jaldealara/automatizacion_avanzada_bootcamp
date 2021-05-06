@@ -4,6 +4,7 @@ import bctsoft.g6.pageobject.base.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import bctsoft.g6.pageobject.base.SeleniumBase;
+import org.testng.Assert;
 
 public class JetSmartVuelosPage extends SeleniumBase {
 
@@ -36,12 +37,14 @@ public class JetSmartVuelosPage extends SeleniumBase {
     private By tituloEquipaje = By.xpath("(//*[@class='main-title'])[2]");
 
 
+
     public String validacionBusqueda(){
         String texto=getText(textoResultado);
         String result="";
         if(texto.equals("Detalles de tu Compra:")){
             result="se encontraron vuelos, Test completo";
         }
+        Assert.assertEquals("se encontraron vuelos, Test completo",result);
         return result;
     }
 
@@ -86,6 +89,8 @@ public class JetSmartVuelosPage extends SeleniumBase {
             resultado="comprobacion exitosa, llego hasta equipaje";
         }
         click(tituloEquipaje);
+        Assert.assertEquals("comprobacion exitosa, llego hasta equipaje",resultado);
+
         return resultado;
     }
 

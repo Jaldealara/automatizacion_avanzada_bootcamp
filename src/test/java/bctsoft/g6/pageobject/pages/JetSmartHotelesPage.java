@@ -4,6 +4,7 @@ import bctsoft.g6.pageobject.base.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import bctsoft.g6.pageobject.base.SeleniumBase;
+import org.testng.Assert;
 
 public class JetSmartHotelesPage extends SeleniumBase {
     public JetSmartHotelesPage(WebDriver driver) {
@@ -58,6 +59,7 @@ public class JetSmartHotelesPage extends SeleniumBase {
                 resultado = "Prueba de filtros exitosa";
             }
         }
+        Assert.assertEquals("Prueba de filtros exitosa",resultado);
         return resultado;
     }
 
@@ -77,6 +79,7 @@ public class JetSmartHotelesPage extends SeleniumBase {
                 resultado = "modificacion parametros de busqueda exitosa";
             }
         }
+        Assert.assertEquals("modificacion parametros de busqueda exitosa",resultado);
         return resultado;
     }
     public void clickBtnVerDisponibilidad(){
