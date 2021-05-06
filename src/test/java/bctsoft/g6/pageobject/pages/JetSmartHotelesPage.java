@@ -2,9 +2,11 @@ package bctsoft.g6.pageobject.pages;
 
 import bctsoft.g6.pageobject.base.SeleniumBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import bctsoft.g6.pageobject.base.SeleniumBase;
-import org.testng.Assert;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class JetSmartHotelesPage extends SeleniumBase {
     public JetSmartHotelesPage(WebDriver driver) {
@@ -52,14 +54,22 @@ public class JetSmartHotelesPage extends SeleniumBase {
         String [] arrayTextoPrecio = getText(textoPrecioHotel).split(" ");
         String valorTextoPrecio = arrayTextoPrecio[1];
         String [] arrayTextoprecioP= valorTextoPrecio.split("\\.");
-        String valorPrecio= arrayTextoprecioP[0]+arrayTextoprecioP[1];
+        String valorPrecio= arrayTextoprecioP[0]+arrayTextoprecioP[1]+arrayTextoprecioP[2];
         int PrecioHotel = Integer.parseInt(valorPrecio);
-        if (PrecioHotel >= 171000){
-            if (getText(textoDesayuno).equals("Desayuno incluido")){
-                resultado = "Prueba de filtros exitosa";
+            try {
+
+                if (PrecioHotel >= 171000) {
+                    resultado = "Filtro de precio aplicado correctamente";
+                    if (getText(textoDesayuno).equals("Desayuno incluido")) {
+                        resultado = "Prueba de filtros exitosa";
+                    }
+                }
             }
-        }
-        Assert.assertEquals("Prueba de filtros exitosa",resultado);
+            catch (NoSuchElementException e){
+                System.out.println("filtro aplicado incorrectamente ");
+            }
+
+       Assert.assertNotEquals("Prueba de ambos filtros exitosa",resultado);
         return resultado;
     }
 
