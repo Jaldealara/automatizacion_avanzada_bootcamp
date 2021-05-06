@@ -33,8 +33,9 @@ public class JetSmartHotelesPage extends SeleniumBase {
     public int seleccionFiltroMayorPrecio() throws InterruptedException {
        //WebElement ultimoValor = findElements(filtroMayorPrecio).get(findElements(filtroMayorPrecio).size()-1);
         click(filtroMayorPrecio);
-        int longitud = getText(textoPrecioHotel).length();
         espera(3000);
+        int longitud = getText(textoPrecioHotel).length();
+        System.out.println(getText(textoPrecioHotel));
         return longitud;
     }
 
@@ -54,7 +55,7 @@ public class JetSmartHotelesPage extends SeleniumBase {
         String [] arrayTextoPrecio = getText(textoPrecioHotel).split(" ");
         String valorTextoPrecio = arrayTextoPrecio[1];
         String [] arrayTextoprecioP= valorTextoPrecio.split("\\.");
-        String valorPrecio= arrayTextoprecioP[0]+arrayTextoprecioP[1]+arrayTextoprecioP[2];
+        String valorPrecio= arrayTextoprecioP[0]+arrayTextoprecioP[1];//+arrayTextoprecioP[2];
         int PrecioHotel = Integer.parseInt(valorPrecio);
             try {
 
@@ -84,8 +85,13 @@ public class JetSmartHotelesPage extends SeleniumBase {
     public String validacionDeBusqueda(int longitud, String busquedaNueva){
         String resultado= "";
         int longitud2 = getText(textoPrecioHotel).length();
+        System.out.println(longitud2);
+        System.out.println(getText(textoPrecioHotel));
+        System.out.println(longitud);
         if(longitud2 < longitud){
+            System.out.println("primer if");
             if (!getText(tituloBusqueda).equals(busquedaNueva) ){
+                System.out.println("segundo if");
                 resultado = "modificacion parametros de busqueda exitosa";
             }
         }

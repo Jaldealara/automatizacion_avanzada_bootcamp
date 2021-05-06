@@ -26,7 +26,7 @@ public class TestBase {
 
     @After
     public void close(){
-        driver.close();
+        //driver.close();
     }
 
 
