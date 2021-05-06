@@ -4,6 +4,7 @@ import bctsoft.g6.pageobject.base.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import bctsoft.g6.pageobject.base.SeleniumBase;
+import org.testng.Assert;
 
 public class JetSmartVerDisponibilidadHoteles extends SeleniumBase {
 
@@ -47,7 +48,7 @@ public class JetSmartVerDisponibilidadHoteles extends SeleniumBase {
         if (getText(textofinal).equals("Los datos de tu reserva")){
             resultado = "reserva completa exitosa";
         }
-
+        Assert.assertEquals("reserva completa exitosa",resultado);
         return resultado;
     }
 }
