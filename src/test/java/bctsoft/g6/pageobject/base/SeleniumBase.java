@@ -76,7 +76,7 @@ public class SeleniumBase {
 
 
 
-    public void espera (int sleep) throws InterruptedException {Thread.sleep(sleep);
+    public void espera (int tiempoEspera) throws InterruptedException {Thread.sleep(tiempoEspera);
 
     }
     public  void switchToPestana(int p1, int p2) throws InterruptedException {
