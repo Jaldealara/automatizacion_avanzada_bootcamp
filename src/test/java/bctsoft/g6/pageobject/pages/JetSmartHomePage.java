@@ -111,7 +111,6 @@ public class JetSmartHomePage extends SeleniumBase {
         espera(2000);
         if(isDisplayed(btnPopUpClose)){
             click(btnPopUpClose);
-
         }
 
     }
@@ -146,7 +145,7 @@ public class JetSmartHomePage extends SeleniumBase {
     }
     public void ingresarFechaIda() {
         isDisplayed(fechaOrigen);
-        findElement(textoMes); //tenemos comp
+        findElement(textoMes);
 
         String  [] corteFecha =fechaIda.split(" "); //tomamos fecha ida (mes)
         for (int i = 0; i <12 ; i++) {
@@ -176,7 +175,6 @@ public class JetSmartHomePage extends SeleniumBase {
 
 
     public String cantidadPasajeros() throws InterruptedException {
-
 
         click(pestanaNPasajeros);
         isDisplayed(listaCantidadPasajeros);
@@ -214,11 +212,10 @@ public class JetSmartHomePage extends SeleniumBase {
     }
 
     public void boton_Search(){
-
         click(botonBusquedaVuelos);
     }
 
-    //-----------------------------ACA LARGA HOTELES-------------------------------------
+    //-----------------------------HOTELES-------------------------------------
     //_---------------------------------------------------------------------------------
 
     public void lugarDeDestinoHoteles (String lugarDestino){
@@ -293,10 +290,11 @@ public class JetSmartHomePage extends SeleniumBase {
         click(btnBusquedaFormulario);
     }
 
-    //-----------------------------ACA LARGA TRASLADOS-------------------------------------
+    //-----------------------------TRASLADOS-------------------------------------
     //_---------------------------------------------------------------------------------
 
     public void lugarOrigenTraslados (String origen) {
+
         click(botonIngresoTraslados);
         switchTo(2);
         click(clickSoloIda);
@@ -306,16 +304,15 @@ public class JetSmartHomePage extends SeleniumBase {
         click(listaOrigenTraslados);
     }
     public void lugarDestinoTraslados (String destino) throws InterruptedException {
-//aqui puede ir una espera de invisibilidad
 
         type(destino, destinoTraslados);
         espera(500);
         isDisplayed(listadestinoTraslados);
         espera(500);
         click(listadestinoTraslados);
-
     }
     public void fechaIdaTraslados(){
+
         String[] fecha = fechaIdaTraslados.split("-"); //
         int dia = Integer.parseInt(fecha[0]);
         int mes = Integer.parseInt(fecha[1])-1;

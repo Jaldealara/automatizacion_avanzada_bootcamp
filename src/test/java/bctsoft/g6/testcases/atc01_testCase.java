@@ -75,7 +75,9 @@ public class atc01_testCase extends TestBase {
         jsHomePage.seleccionarNroHabitaciones("1");
         jsHomePage.seleccionarNroAdultos("2");
         jsHomePage.seleccionarNroNinos("1");
+
         jsHomePage.btnBusquedaHotel();
+
         jsHotelesPage.switchToPestana(0,1);
         jsHotelesPage.seleccionFiltroMayorPrecio();
         jsHotelesPage.seleccionarFiltroDesayuno();
@@ -154,13 +156,16 @@ public class atc01_testCase extends TestBase {
         jetSmartTrasladosPage = new JetSmartTrasladosPage(driver);
         jsHomePage.goToUrl("https://jetsmart.com/cl/es/");
         jsHomePage.cerrarModuloSuscribete();
+
         jsHomePage.lugarOrigenTraslados("Buenos Aires");
         jsHomePage.lugarDestinoTraslados("Bariloche");
         jsHomePage.fechaIdaTraslados();
         jsHomePage.seleccionarHoraTraslados();
         jsHomePage.seleccionarPasajeros();
         jsHomePage.botonBuscarTraslados();
+
         jsHomePage.switchToPestana(0,1);
+
         jetSmartTrasladosPage.cierrePopUp();
         jetSmartTrasladosPage.seleccionMoneda("USD");
         jetSmartTrasladosPage.btnBuscar();
@@ -171,6 +176,7 @@ public class atc01_testCase extends TestBase {
     public void ATC_012FalloEnNumeroDeVuelos () throws InterruptedException {
         jsHomePage = new JetSmartHomePage(driver);
         jetSmartTrasladosPage = new JetSmartTrasladosPage(driver);
+
         jsHomePage.goToUrl("https://jetsmart.com/cl/es/");
         jsHomePage.cerrarModuloSuscribete();
         jsHomePage.lugarOrigenTraslados("Buenos Aires - Ministro Pistarini");
@@ -179,7 +185,9 @@ public class atc01_testCase extends TestBase {
         jsHomePage.seleccionarHoraTraslados();
         jsHomePage.seleccionarPasajeros();
         jsHomePage.botonBuscarTraslados();
+
         jsHomePage.switchToPestana(0,1);
+
         jetSmartTrasladosPage.botonReservaTraslado();
         jetSmartTrasladosPage.rellenarDatos("juan separado","juan12@gmail.com","972447281");
         jetSmartTrasladosPage.clickPage();
