@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Bootcamp Tsoft">
+    <test name="Navegador Chrome: Web">
+        <classes>
+            <class name="bctsoft.g6.testcases.atc02_BusquedaVueloFechaAnioSiguiente"></class>
+            <class name="bctsoft.g6.testcases.atc02_BusquedaVueloFechaAnioSiguiente"></class>
+          <class name="bctsoft.g6.testcases.atc03_reservaVueloHastaSeleccionEquipaje"></class>
+          <class name="bctsoft.g6.testcases.atc04_busquedaHotelConFiltro"></class>
+          <class name="bctsoft.g6.testcases.atc05_modificacionesParametrosBusqueda"></class>
+          <class name="bctsoft.g6.testcases.atc06_flujoCompletoDeReserva"></class>
+          <class name="bctsoft.g6.testcases.atc10_busquedaDeTraslado"></class>
+          <class name="bctsoft.g6.testcases.atc11_cambioMonedaPredefinida"></class>
+          <class name="bctsoft.g6.testcases.atc12_falloEnNumeroDeVuelos"></class>
+        </classes>
+    </test>
+</suite>

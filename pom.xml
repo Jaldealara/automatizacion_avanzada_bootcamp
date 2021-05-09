@@ -7,7 +7,6 @@
     <groupId>groupId</groupId>
     <artifactId>automatizacion_avanzada_bootcamp</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
@@ -105,15 +104,15 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
-                    <!--<includes>
+                    <includes>
                         <include>**/reg_001_jetsmartRunner.java</include>
                     </includes>
                     <parallel>methods</parallel>
                     <threadCount>4</threadCount>
-                    <useUnlimitedThreads>false</useUnlimitedThreads>-->
-                    <suiteXmlFiles>
+                    <useUnlimitedThreads>false</useUnlimitedThreads>
+                    <!--<suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    </suiteXmlFiles>-->
                 </configuration>
             </plugin>
 
