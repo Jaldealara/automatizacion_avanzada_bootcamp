@@ -1,4 +1,4 @@
-package bctsoft.mentoria.testcases;
+package bctsoft.testcases;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

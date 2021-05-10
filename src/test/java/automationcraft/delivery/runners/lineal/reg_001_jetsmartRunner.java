@@ -9,8 +9,7 @@ import io.cucumber.junit.CucumberOptions;
         features = {"src/test/java/automationcraft/testcreation/jetsmart/features"},
         glue = {"automationcraft.testcreation.jetsmart.steps","automationcraft.engine.bdd"},
         plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                  "timeline:test-output-thread"},
-        tags = "@bootcamp"
+                  "timeline:test-output-thread"}
         )
-public class jetSmart_mentoria {
+public class reg_001_jetsmartRunner {
 }

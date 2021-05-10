@@ -1,5 +1,4 @@
 Feature: Home Page Features
-  @bootcamp
   Scenario: home page title
     Given user is on login page
     When user gets the title of the page
