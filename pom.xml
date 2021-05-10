@@ -105,20 +105,17 @@
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <!--<includes>
-                        <include>**/jetSmart_**.java</include>
+                        <include>**/reg_001_jetsmartRunner.java</include>
                     </includes>
                     <parallel>methods</parallel>
                     <threadCount>4</threadCount>
                     <useUnlimitedThreads>false</useUnlimitedThreads>-->
-                <suiteXmlFiles>
-                     <suiteXmlFile>testngEquipo2.xml</suiteXmlFile>
-                 </suiteXmlFiles>
-             </configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
-
 
         </plugins>
     </build>
-
-
 </project>
