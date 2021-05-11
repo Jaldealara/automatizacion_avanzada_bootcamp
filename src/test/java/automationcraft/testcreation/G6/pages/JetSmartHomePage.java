@@ -216,12 +216,14 @@ public class JetSmartHomePage extends SeleniumBase {
 
     //-----------------------------HOTELES-------------------------------------
     //_---------------------------------------------------------------------------------
-
-    public void lugarDeDestinoHoteles (String lugarDestino){
+    public void clickIconoHoteles(){
         click(clickHotelesH);
+    }
+    public void lugarDeDestinoHoteles (String lugarDestino) throws InterruptedException {
         switchTo(0);
         clear(destinoOrigenH);
         type(lugarDestino,destinoOrigenH);
+        espera(2000);
         isDisplayed(listaCiudadesH);
         click(seleccionCiudadH);
 

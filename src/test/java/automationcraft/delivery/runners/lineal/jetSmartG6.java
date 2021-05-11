@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
         glue = {"automationcraft.testcreation.G6.steps","automationcraft.engine.bdd"},
         plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "timeline:test-output-thread"},
-        tags = "@G6 and @caso3"
+        tags = "@G6 and @caso4"
 
 )
 
