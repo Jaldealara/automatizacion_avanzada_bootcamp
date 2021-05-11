@@ -80,9 +80,10 @@ public class JetSmartHotelesPage extends SeleniumBase {
         return resultado;
     }
 
-    public void modificacionBusqueda(){
+    public void modificacionBusqueda() throws InterruptedException {
         clear(origenNuevaBusqueda);
         type("Arica",origenNuevaBusqueda);
+        espera(2000);
         isDisplayed(listaDelugares);
         click(listaDelugares);
         sendKeysEnter(origenNuevaBusqueda);
