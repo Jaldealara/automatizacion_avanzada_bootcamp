@@ -1,3 +1,9 @@
+Feature:modulo traslados JetSmart
+
+  @G6 @caso10
+  Scenario: busqueda de traslado
+    Given que soy un usuario que ingreso a jetSmart en la seccion traslados
+
 Feature:modulo Traslados JetSmart
 
   @G6 @caso10
