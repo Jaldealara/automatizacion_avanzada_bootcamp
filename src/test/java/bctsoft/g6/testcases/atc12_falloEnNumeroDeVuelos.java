@@ -31,6 +31,5 @@ public class atc12_falloEnNumeroDeVuelos extends TestBase {
         jetSmartTrasladosPage.nroDeVuelo("asddsdqwdqwd");
         String result=jetSmartTrasladosPage.confirmacion();
         System.out.println(result);
-
     }
 }
