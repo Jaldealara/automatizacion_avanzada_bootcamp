@@ -294,20 +294,27 @@ public class JetSmartHomePage extends SeleniumBase {
     //-----------------------------TRASLADOS-------------------------------------
     //_---------------------------------------------------------------------------------
 
-    public void lugarOrigenTraslados (String origen) {
-
+    public void clickIconoTraslado(){
         click(botonIngresoTraslados);
-        switchTo(2);
+    }
+
+    public void clickSoloIda(){
         click(clickSoloIda);
+    }
+
+    public void lugarOrigenTraslados (String origen) throws InterruptedException {
+
+        switchTo(2);
         click(origenTraslados);
         type(origen, origenTraslados);
+        espera(2000);
         isDisplayed(listaOrigenTraslados);
         click(listaOrigenTraslados);
     }
     public void lugarDestinoTraslados (String destino) throws InterruptedException {
 
         type(destino, destinoTraslados);
-        espera(500);
+        espera(2000);
         isDisplayed(listadestinoTraslados);
         espera(500);
         click(listadestinoTraslados);

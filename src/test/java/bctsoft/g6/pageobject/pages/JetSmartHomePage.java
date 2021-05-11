@@ -293,8 +293,8 @@ public class JetSmartHomePage extends SeleniumBase {
     //-----------------------------TRASLADOS-------------------------------------
     //_---------------------------------------------------------------------------------
 
-    public void lugarOrigenTraslados (String origen) {
 
+    public void lugarOrigenTraslados (String origen) {
         click(botonIngresoTraslados);
         switchTo(2);
         click(clickSoloIda);

@@ -49,8 +49,10 @@ public class JetSmartTrasladosPage extends SeleniumBase {
         selectCantidadValue(tipoMoneda, tipoMoned);
     }
 
-    public void btnBuscar() {
+    public void btnBuscar() throws InterruptedException {
+
         click(btnBusqueda);
+        espera(2000);
     }
 
 
